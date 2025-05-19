@@ -14,8 +14,14 @@ import java.util.List;
 @RestController
 @RequestMapping("quiz")
 public class QuizController {
+
     @Autowired
     private QuizService quizService;
+
+    @GetMapping("/")
+    public String home() {
+        return "Quiz App is Running!";
+    }
 
     @PostMapping("create")
     public ResponseEntity<String> createQuiz(@RequestParam String category, @RequestParam int numQ, @RequestParam String title){
